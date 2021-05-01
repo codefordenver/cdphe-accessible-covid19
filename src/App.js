@@ -180,6 +180,12 @@ const App = () => {
           />
         </Route>
       </section>
+      <footer className="info-footer">
+        <section className="footer-content">
+          <p className="attribution">Created in partnership with <a href="https://codefordenver.org/">Code for Denver</a>.</p>
+          <img className="logo" src="https://joel-oe-lacey-resources.s3.amazonaws.com/logo.png" alt="The Code for Denver logo, a red circle inside it is an outline of mountains and the sun both in white" />
+        </section>
+      </footer>
     </section>
   );
 };
