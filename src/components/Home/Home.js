@@ -14,10 +14,24 @@ const GridContainer = (props) => (
 
 export const Home = ({ data, vaccine }) => {
   const [isDaily, setIsDaily] = useState(true);
-  // const latestVax = [...vaccine].reverse().slice(0, 8);
+  //there is actually a one day lag on vaccine data, so vaccine data is always technically one day behind.
+  //it also runs a moment behind in fetching 
+  const latestVax = [...vaccine].reverse().slice(0, 8).map(point => parseInt(point.value));
+  const joinedData = data.reduce((finalJoin, point, i) => {
+    if (vaccine.length) {
+      finalJoin.push({
+        ...point,
+        Vaccines: latestVax[i]
+      })
+    } else {
+      finalJoin.push({...point})
+    }
+
+    return finalJoin;
+  }, [])
   // diffs are weekly if isDaily is false
-  const current = data[0];
-  const previous = isDaily ? data[1] : data[7];
+  const current = joinedData[0];
+  const previous = isDaily ? joinedData[1] : joinedData[7];
 
   const handleToggleDaily = (dailyButton) => {
     if ((dailyButton && !isDaily) || (!dailyButton && isDaily)) {

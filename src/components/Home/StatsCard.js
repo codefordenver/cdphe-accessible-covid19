@@ -21,6 +21,7 @@ export const StatsCard = (_ref) => {
     hosp: "integer",
     counties: "integer",
     outbreaks: "integer",
+    vaccines: "integer"
   }
 
   const getFormatter = (label) => {
@@ -54,6 +55,7 @@ export const StatsCard = (_ref) => {
     "population",
     "tested",
     "test_encounters",
+    "vaccines"
   ]
 
   const negativeLabels = [
@@ -93,7 +95,8 @@ export const StatsCard = (_ref) => {
     dthcovid19: "Deaths From C19",
     hosp: "Hospitalizations From C19",
     counties: "Counties Reporting Cases",
-    rate: "Infection Rate Per 100,000"
+    rate: "Infection Rate Per 100,000",
+    vaccines: "Cumulative Vaccine Doses Administered"
   }
 
   const getLabelAlias = (label) => {
