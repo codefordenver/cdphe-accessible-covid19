@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export function formatComma(num){
     num = num.toString();
     var pattern = /(-?\d+)(\d{3})/;
@@ -61,7 +63,7 @@ export function sortObjectsByDate(objects, ascending, parseDate) {
     // parseDate must take an object argument and return a Javascript Date
     let objectsCopy = objects.slice();
     if (parseDate === undefined) {
-        parseDate = obj => parseDateMonthDayYear(obj.Date);
+        parseDate = obj => parseDateMonthDayYear(obj.date);
     }
     if (ascending === undefined) {
         ascending = true;
@@ -76,3 +78,14 @@ export function sortObjectsByDate(objects, ascending, parseDate) {
     return objectsCopy;
 }
 
+export function keysToLowercase(arr) {
+  return arr.map( obj => {
+    if (obj instanceof Object && Array.isArray(obj) === false) {
+    return _.transform(obj, (result, val, key) => {
+      result[key === 'Date' ? key.toLowerCase() : key] = val;
+     })
+   } else {
+     return obj;
+   }
+  }) 
+ }

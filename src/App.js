@@ -12,6 +12,7 @@ import Card from "./components/Card/Card";
 import { Home } from "./components/Home/Home";
 import { Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
+import About from "./components/About/About";
 import SidebarMobile from "./components/Sidebar/SidebarMobile";
 
 const App = () => {
@@ -60,7 +61,7 @@ const App = () => {
       <SidebarMobile />
       <section className='display'>
         <Route exact path='/'>
-          {dailyData && <Home data={dailyData.slice(0, 8)} />}
+          {dailyData && <Home data={dailyData.slice(0, 8)} vaccine={vaccineData.all}  />}
         </Route>
         <Route exact path="/daily-cases">
           <Card 
@@ -179,7 +180,16 @@ const App = () => {
             labels={"Unspecified COVID Vaccinations"}
           />
         </Route>
+        <Route exact path='/about'>
+          <About />
+        </Route>
       </section>
+      <footer className="info-footer">
+        <section className="footer-content">
+          <p className="attribution">Created in partnership with <a href="https://codefordenver.org/">Code for Denver</a>.</p>
+          <img className="logo" src="https://joel-oe-lacey-resources.s3.amazonaws.com/logo.png" alt="The Code for Denver logo, a red circle inside it is an outline of mountains and the sun both in white" />
+        </section>
+      </footer>
     </section>
   );
 };

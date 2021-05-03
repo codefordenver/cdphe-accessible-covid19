@@ -1,4 +1,4 @@
-import { formatDate, sortObjectsByDate } from "./utilities";
+import { formatDate, sortObjectsByDate, keysToLowercase } from "./utilities";
 import _ from 'lodash';
 import { API_URLS } from "./constants";
 
@@ -34,7 +34,8 @@ export async function getDailyStatistics() {
       })
     });
     let filteredData = newData.filter((attr) => attr.Date !== null);
-    return sortObjectsByDate(filteredData, false);
+    let lowercaseDate = keysToLowercase(filteredData)
+    return sortObjectsByDate(lowercaseDate, false);
   }
 
   return await fetch(API_URLS.dailyStatistics)

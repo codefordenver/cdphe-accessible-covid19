@@ -1,0 +1,9 @@
+.about {
+    height: 100%;
+    width: 100%;
+    padding: 3rem;
+}
+
+.about-info {
+    font-size: 1.2rem;
+}

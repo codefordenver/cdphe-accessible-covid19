@@ -14,7 +14,6 @@ const XYGraph = ({data, topic, dateCap, yAccessor}) => {
             <Alert type={"danger"} text={"Oops, we can't fetch that data at the moment. Please check back later."} />
         )
     }
-    const dateKey = dateCap ? 'Date' : 'date';
 
     const frameProps = {   
         lines: { 
@@ -36,7 +35,7 @@ const XYGraph = ({data, topic, dateCap, yAccessor}) => {
         },
         xScaleType: scaleTime(),
         xAccessor: function(e) {
-            return new Date(e[dateKey]);
+            return new Date(e["date"]);
         },
         yAccessor: yAccessor,
         yExtent: [0],
@@ -72,14 +71,14 @@ const XYGraph = ({data, topic, dateCap, yAccessor}) => {
             return (
                 <React.Fragment>
                     {
-                        (d[dateKey] && d[yAccessor]) ? 
+                        (d["date"] && d[yAccessor]) ? 
                         <div className="tooltip-content">
-                            <p>Date: {formatDate(d[dateKey])}</p>
+                            <p>Date: {formatDate(d["date"])}</p>
                             <p>Total {topic} Count: {formatComma(d[yAccessor])}</p>
                         </div>
                         : 
                         <div className="tooltip-content">
-                            <p>Date: {d[dateKey]}</p>
+                            <p>Date: {d["date"]}</p>
                             <p>Total {topic} Count: {d[yAccessor]}</p>
                         </div>
                     }
