@@ -43,6 +43,9 @@ const SidebarMobile = () => {
             <li className="sub-option" role="menuitem" aria-label="Vaccine Summary Unspecified" tabIndex="0">Unspecified Vaccines</li>
           </Link>
         </ul>
+        <Link to="/about" className="link">
+          <h4 className="option" role="menuitem" tabIndex="0">About</h4>
+        </Link>
     </Menu>
   );
 };

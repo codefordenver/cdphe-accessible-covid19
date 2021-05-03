@@ -63,19 +63,21 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
 .attribution {
   font-size: .8rem;
   height: 100%;
   width: 25%;
+  padding-top: 10px;
 }
 
 .logo {
   height: 80%;
   width: 10%;
   object-fit: contain;
+  padding: 5px;
 }
 
 @media screen and (max-width: 992px) {

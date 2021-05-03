@@ -12,6 +12,7 @@ import Card from "./components/Card/Card";
 import { Home } from "./components/Home/Home";
 import { Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
+import About from "./components/About/About";
 import SidebarMobile from "./components/Sidebar/SidebarMobile";
 
 const App = () => {
@@ -178,6 +179,9 @@ const App = () => {
             title="Daily Colorado Vaccinations - Unspecified"
             labels={"Unspecified COVID Vaccinations"}
           />
+        </Route>
+        <Route exact path='/about'>
+          <About />
         </Route>
       </section>
       <footer className="info-footer">
