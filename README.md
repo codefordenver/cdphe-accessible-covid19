@@ -1,6 +1,9 @@
 # Accessible COVID-19 Dashboard
 An accessible version of the Colorado Department of Public Health and Environment (CDPHE) COVID-19 dashboard
 
+Currently hosted on Netlify:
+https://accessibility-covid-dashboard.netlify.app/
+
 ## Overview
 This project sets out to use the Colorado Department of Public Health and Environment (CDPHE) data around COVID-19 cases to create a dashboard similar to the State's official site, but accessible by screenreaders.
 
@@ -36,10 +39,6 @@ We are at the ground level, currently working to recreate visualizations and fac
     - A table visualization of the latest date's COVID data.
 - Sidebar
     - A simple Sidebar navigation, a conceptual alternative utilizing Tabler is under DropdownSidebar, but not currently in use.
-
-### Staging Site
-Currently hosted on Netlify:
-https://accessibility-covid-dashboard.netlify.app/
 
 ## Getting Involved
 ### Choosing A First Issue
