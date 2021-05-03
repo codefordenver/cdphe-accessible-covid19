@@ -61,7 +61,7 @@ const App = () => {
       <SidebarMobile />
       <section className='display'>
         <Route exact path='/'>
-          {dailyData && <Home data={dailyData.slice(0, 8)} />}
+          {dailyData && <Home data={dailyData.slice(0, 8)} vaccine={vaccineData.all}  />}
         </Route>
         <Route exact path="/daily-cases">
           <Card 

@@ -12,10 +12,10 @@ const GridContainer = (props) => (
   </Grid.Col>
 );
 
-export const Home = ({ data }) => {
+export const Home = ({ data, vaccine }) => {
   const [isDaily, setIsDaily] = useState(true);
+  // const latestVax = [...vaccine].reverse().slice(0, 8);
   // diffs are weekly if isDaily is false
-
   const current = data[0];
   const previous = isDaily ? data[1] : data[7];
 
